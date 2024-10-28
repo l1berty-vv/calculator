@@ -1,0 +1,137 @@
+:root {
+    /* Основная цветовая палитра */
+    --primary-dark: #1a1a2e;
+    --primary-light: #e6e6ff;
+    --accent-1: #4e54c8;
+    --accent-2: #8f94fb;
+    --neon-glow: 0 0 10px rgba(78, 84, 200, 0.6);
+    
+    /* Градиенты */
+    --gradient-primary: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    --gradient-dark: linear-gradient(135deg, #16161d, #1a1a2e);
+}
+
+/* Современные настройки */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--gradient-dark);
+    min-height: 100vh;
+    padding: clamp(1rem, 5vw, 2rem);
+    color: var(--primary-light);
+    line-height: 1.6;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+}
+
+.container {
+    max-width: min(90%, 600px);
+    margin: 0 auto;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--primary-light);
+    transition: color 0.3s ease;
+}
+
+input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--primary-light);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent-1);
+    box-shadow: var(--neon-glow);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        var(--neon-glow),
+        0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#results {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--primary-light);
+}
+
+/* Добавляем анимацию для интерактивных элементов */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(78, 84, 200, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(78, 84, 200, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(78, 84, 200, 0); }
+}
+
+/* Медиа-запросы для адаптивности */
+@media (prefers-color-scheme: light) {
+    :root {
+        --primary-dark: #ffffff;
+        --primary-light: #1a1a2e;
+    }
+    
+    body {
+        background: #f5f5ff;
+    }
+    
+    .container {
+        background: rgba(255, 255, 255, 0.9);
+    }
+}

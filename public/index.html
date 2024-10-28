@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Калькулятор зарплаты</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Калькулятор зарплаты</h1>
+        <label for="monthlyRate">Месячная ставка ($):</label>
+        <input type="number" id="monthlyRate" placeholder="Введите месячную ставку">
+
+        <label for="workDays">Рабочих дней в месяце:</label>
+        <input type="number" id="workDays" placeholder="Введите количество рабочих дней">
+
+        <label for="exchangeRate">Курс USD → UAH:</label>
+        <input type="text" id="exchangeRate" placeholder="Введите курс обмена">
+
+        <label for="hoursWorked">Отработано (в часах):</label>
+        <input type="number" id="hoursWorked" placeholder="Введите отработанные часы">
+
+        <button id="calculateButton">Рассчитать</button>
+
+        <h2>Результаты:</h2>
+        <div id="results">
+            <p id="dailyRate"></p>
+            <p id="hourlyRate"></p>
+            <p id="earnedUsd"></p>
+            <p id="earnedUah"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
